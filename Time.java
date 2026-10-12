@@ -1,51 +1,49 @@
 package GerenciadorDeTorneios;
-import java.util.*;
 
+public class Time {
+    private String nome;
+    private int vitorias;
+    private int derrotas;
+    private int pontuacaoTotal;
 
-public class Time{
-  private String nomeTime;
-  private int pontuacao;
-  private int qtdDerrotas;
-  private int qtdVitorias;
+    public Time(String nome) {
+        this.nome = nome;
+        this.vitorias = 0;
+        this.derrotas = 0;
+        this.pontuacaoTotal = 0;
+    }
 
-  public Time(String nomeTime){
-    this.nomeTime = nomeTime;
-    this.pontuacao = 0;
-    this.qtdDerrotas = 0;
-    this.qtdVitorias = 0;
-  }
+    public void registrarVitoria() {
+        this.vitorias++;
+        this.pontuacaoTotal += 3;
+    }
 
-  public void Vitoria(){
-    this.qtdVitorias++;
-    this.pontuacao += 3;
-  }
+    public void registrarDerrota() {
+        this.derrotas++;
+    }
 
-  public void Derrota(){
-    this.qtdDerrotas++;
-  }
+    public String getNome() {
+        return nome;
+    }
 
-  public String getNomeTime(){
-    return nomeTime;
-  }
+    public int getVitorias() {
+        return vitorias;
+    }
 
-  public int getPontuacao(){
-    return pontuacao;
-  }
+    public int getDerrotas() {
+        return derrotas;
+    }
 
-  public int getQtdVitorias(){
-    return qtdVitorias;
-  }
+    public int getPontuacaoTotal() {
+        return pontuacaoTotal;
+    }
 
-  public int getQtdDerrotas(){
-    return qtdDerrotas;
-  }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-  @Override
-  public String toString(){
-    return "Time: " +  nomeTime + "\t"+
-     "Pontuação: " +  pontuacao + "\t"+
-     "Vitórias: " +  qtdVitorias + "\t"+
-     "Derrotas: " +  qtdDerrotas + "\t";
-  }
-
+    @Override
+    public String toString() {
+        return "Time: " + nome + " | Pontuação: " + pontuacaoTotal + " | Vitórias: " + vitorias + " | Derrotas: " + derrotas;
+    }
 }
