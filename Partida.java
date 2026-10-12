@@ -4,19 +4,19 @@ import java.util.*;
 public class Partida{
   private Time timeA;
   private Time timeB;
-  private int ptA;
-  private int ptB;
+  private int pontosTimeA;
+  private int pontosTimeB;
 
-  public Partida(Time timeA, Time timeB, int ptA, int ptB){
+  public Partida(Time timeA, Time timeB, int pontosTimeA, int pontosTimeB){
     this.timeA = timeA;
     this.timeB = timeB;
-    this.ptA = ptA;
-    this.ptB = ptB;
+    this.pontosTimeA = pontosTimeA;
+    this.pontosTimeB = pontosTimeB;
 
-    if(ptA > ptB){
+    if(pontosTimeA > pontosTimeB){
       timeA.Vitoria();
       timeB.Derrota();
-    }else if(ptB > ptA){
+    }else if(pontosTimeB > pontosTimeA){
       timeB.Vitoria();
       timeA.Derrota();
     }
@@ -30,15 +30,15 @@ public class Partida{
       return timeB;
     }
 
-    public int getPtA(){
-      return ptA;
+    public int getPontosTimeA(){
+      return pontosTimeA;
     }
-    public int getPtB(){
-      return ptB;
+    public int getPontosTimeB(){
+      return pontosTimeB;
     }
 
      @Override
     public String toString(){
-    return "Placar: " + ptA + " X " + ptB;
+    return "Placar: " + pontosTimeA + " X " + pontosTimeB;
   }
 }
